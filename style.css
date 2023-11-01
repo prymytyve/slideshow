@@ -30,10 +30,11 @@ h1{
 .slidesDiv{
     align-self: flex-end;
     display: flex;
-    width: 75vw;
+    /* width: 75vw; */
     justify-content:center;
     gap: 10px;
-    padding: 5px;
+    padding: 10px 5px 5px;
+    border-top: solid gray 1px;
     
 }
 
@@ -49,6 +50,13 @@ h1{
 .slide > input{
     align-items: flex-end;
     height: 20px;
+}
+
+.credit{
+   text-align: center;
+   font-size: 14px;
+   margin-top: 5px;
+   margin-bottom: 10px;
 }
 
 .arrow{
