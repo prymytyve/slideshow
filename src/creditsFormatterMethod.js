@@ -1,0 +1,22 @@
+import { Slides } from "./imgSlideClassMod";
+export default Slides.prototype.creditsFormatter = function () {
+  const link1 = document.createElement("a");
+  link1.textContent = this.creator;
+  link1.setAttribute("href", this.creatorLink);
+  link1.setAttribute("target", "_blank");
+  const link2 = document.createElement("a");
+  link2.textContent = this.webName;
+  link2.setAttribute("href", this.imgLink);
+  link2.setAttribute("target", "_blank");
+  const credit = document.createElement("div");
+  credit.classList.add("credit");
+  const span1 = document.createElement("span");
+  span1.textContent = "Photo by: ";
+  const span2 = document.createElement("span");
+  span2.textContent = " on ";
+  credit.appendChild(span1);
+  credit.appendChild(link1);
+  credit.appendChild(span2);
+  credit.appendChild(link2);
+  return credit;
+};
