@@ -1,21 +1,35 @@
 /* :root{
 } */
 
-body {
-  display: grid;
-  grid-template-columns: 1fr 8fr 1fr;
-  justify-items: center;
-  padding: 0px;
-  margin: 0px;
+.hidden{
+  display: none;
 }
 
-h1 {
-  grid-column: span 3;
+
+body {
+  display: grid;
+  padding: 0px;
+  margin: 0px;
+  height: 100vh;
+  overflow-y:scroll;
+  scrollbar-gutter: stable;
+  position: relative;
+}
+
+header{
+  display:flex;
+  justify-content: center;
+  width: inherit;
+  height: 100px;
+}
+
+#playInt{
+  width: 18px;
+  text-align: right;
 }
 
 .imageContainer {
   display: grid;
-  width: 80vw;
   justify-items: center;
 }
 
@@ -30,12 +44,47 @@ h1 {
 .slidesDiv {
   align-self: flex-end;
   display: flex;
-  /* width: 75vw; */
   justify-content: center;
   gap: 10px;
   padding: 10px 5px 5px;
+  box-sizing: border-box;
   border-top: solid gray 1px;
+  position: sticky;
+  bottom: 0;
+  background-color: lightgray;
+  width:100%;
 }
+
+.playSlideStuff{
+  position: absolute;
+  left:20px;
+  font-size: 18px;
+  align-self: center;
+  display: grid;
+  gap:1px;
+  grid-template-rows: repeat(2, 20px);
+}
+
+.playSlideStuff div:first-child label{
+  font-weight: 800;
+}
+
+.playSlideStuff > .playIntDiv{
+  font-size: 16px;
+  padding-left: 3px;
+}
+
+.playIntDiv img{
+  display: inline-block;
+  height: 16px;
+  margin-left: 3px;
+  background-color: lightblue;
+  border-radius: 100%;
+  border: solid black 1px;
+}
+
+
+
 
 .slide {
   display: grid;
@@ -60,6 +109,14 @@ h1 {
 
 .arrow {
   height: 100px;
-  align-self: center;
-  margin-top: -100px;
+  margin-top: 250px;
+  position: absolute;
+}
+
+.rightArrow{
+  right:10px;
+}
+
+.leftArrow{
+  left: 10px;
 }
