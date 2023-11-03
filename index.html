@@ -7,7 +7,9 @@
   </head>
 
   <body>
-    <h1>Slideshow</h1>
+    <header>
+      <h1>Slideshow</h1>
+    </header>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -20,7 +22,7 @@
     </svg>
     <div class="imageContainer">
       <div class="imageBox"></div>
-      <div class="slidesDiv"></div>
+        
     </div>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -32,6 +34,19 @@
         d="M9,6H10.5L16.5,12L10.5,18H9V6M13.67,12L11,9.33V14.67L13.67,12Z"
       />
     </svg>
+    <div class="slidesDiv">
+      <div class="playSlideStuff">
+        <div>
+          <input type="checkbox" id="playCheck">
+          <label for="playCheck">Play</label>
+        </div class='time'>
+        <div class="playIntDiv hidden">
+          <label for="playInt">Change slides: <input id="playInt" min="3" max="15" value="5"> seconds</label>
+          <img src="../src/img/check.svg" alt="" class="check">
+        </div>
+      </div>
+      </div>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>
