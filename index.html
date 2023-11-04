@@ -14,8 +14,13 @@
               <label for="playCheck" class="off">Play</label>
             </div>
             <div class="playIntDiv hidden">
-              <label for="playInt">Change slides in: <input id="playInt" min="3" max="15" value="5"> seconds</label>
-              <img src="../src/img/check.svg" alt="" class="check">
+            <input type="checkbox" id="interval" style="display: none;">
+            <label for="interval">Interval</label>
+              <span class="intervalWrapper hidden">
+                <label for="playInt"><input id="playInt" min="3" max="15" value="5"> s<span>(3 - 15)</span></label>
+                <img src="../src/img/check.svg" alt="" class="check">
+                <span></span>
+              </span>
             </div>
           </div>
       <div class="slidesDiv">
