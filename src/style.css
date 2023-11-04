@@ -1,6 +1,7 @@
 :root{
-    scrollbar-gutter: stable both-edges;
+  scrollbar-gutter: stable both-edges;
 }
+
 .hidden{
   display: none;
 }
@@ -18,7 +19,6 @@ body {
   text-align: right;
 
 }
-
 
 .imageBox{
   display: block;
@@ -56,13 +56,32 @@ footer{
   gap: 8px;
   font-weight: 800;
   font-size:18px;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .playSlideStuff{
   gap:1px;
 }
 
+.intervalWrapper,
+.intervalWrapper label{
+  vertical-align:top;
+}
+
+label[for="interval"]{
+  color:rgb(44, 112, 135);
+}
+
+.intervalWrapper label{
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+label[for="playInt"]>span {
+  color: rgb(50, 72, 22);
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
 .playIntDiv img{
   display: inline-block;

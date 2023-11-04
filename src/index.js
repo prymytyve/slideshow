@@ -13,6 +13,9 @@ const playInt = document.querySelector("#playInt");
 const playIntDiv = document.querySelector(".playIntDiv");
 const check = document.querySelector(".check");
 const playLabel = document.querySelector('label[for="playCheck"]');
+const slideInterval = document.querySelector("#interval");
+const slideIntLabel = document.querySelector('[for="interval"]');
+const intervalWrapper = document.querySelector(".intervalWrapper");
 
 showThis;
 
@@ -81,7 +84,6 @@ const autoPlay = () => {
   const i = getCurrentImg();
   let next = i + 1;
   if (i >= slideArray.length - 1) next = 0;
-  console.log(playValue());
   bigImgHandler(next);
 };
 
@@ -95,20 +97,30 @@ play.addEventListener("click", () => {
       play.disabled = false;
       playLabel.classList.remove("unavail");
     }, 3000);
+    playLabel.textContent = "Stop";
     playLabel.classList.remove("off");
     playLabel.classList.add("on");
   }
   function no() {
     playIntDiv.classList.add("hidden");
     clearInterval(runInterval);
+    playLabel.textContent = "Play";
     playLabel.classList.remove("on");
     playLabel.classList.add("off");
   }
   play.checked === true ? yes() : no();
 });
-
 check.addEventListener("click", () => {
+  slideInterval.disabled = false;
+  slideIntLabel.classList.remove("unavail");
   clearInterval(runInterval);
   runInterval = setInterval(autoPlay, playValue());
   playInt.value = playValue() / 1000;
+  intervalWrapper.classList.add("hidden");
+});
+
+slideInterval.addEventListener("click", () => {
+  slideInterval.disabled = true;
+  slideIntLabel.classList.add("unavail");
+  intervalWrapper.classList.remove("hidden");
 });

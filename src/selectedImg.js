@@ -3,6 +3,7 @@ import { Slides } from "./imgSlideClassMod";
 
 export default Slides.prototype.showThis = function () {
   const div = document.createElement("div");
+  div.classList.add("incoming");
   const image = new Image();
   image.src = this.imgSrc;
 
