@@ -1,75 +1,68 @@
+:root{
+    scrollbar-gutter: stable both-edges;
+}
 .hidden{
   display: none;
 }
 
 
 body {
-  display: grid;
   padding: 0px;
   margin: 0px;
-  height: 100vh;
-  overflow-y:auto;
-  scrollbar-gutter: stable;
-  position: relative;
-}
-
-header{
-  display:flex;
-  justify-content: center;
-  width: inherit;
-  height: 100px;
+  display: grid;
+  min-height: 100vh;  
 }
 
 #playInt{
   width: 18px;
   text-align: right;
+
 }
 
-.imageContainer {
-  display: grid;
-  justify-items: center;
-}
 
-.imageBox > img {
+.imageBox{
   display: block;
+  place-self: center;
+  padding-top: 3vh;
+
 }
 
-.imageBox > p {
-  text-align: center;
+footer{
+  align-self: end;
+  padding: 10px 5px 4px 5px;
+  box-sizing: border-box;
+  opacity: 100%;
+  position:sticky;
+  bottom: 0;  
+  display: grid;
+  width: fit-content;
+  justify-self: center;
+  background-color: rgb(218, 246, 255);
+  border-radius: 10px;
+  opacity: 85%;
 }
 
 .slidesDiv {
-  align-self: flex-end;
   display: flex;
   justify-content: center;
   gap: 10px;
-  padding: 10px 5px 5px;
-  box-sizing: border-box;
-  border-top: solid gray 1px;
-  position: sticky;
-  bottom: 0;
-  background-color: lightgray;
-  width:100%;
+  justify-self: center;
+}
+
+.panel{
+  display: flex;
+  height: 30px;
+  padding-left:30%;
+  gap: 8px;
+  font-weight: 800;
+  font-size:18px;
+  align-items: center;
 }
 
 .playSlideStuff{
-  position: absolute;
-  left:20px;
-  font-size: 18px;
-  align-self: center;
-  display: grid;
   gap:1px;
-  grid-template-rows: repeat(2, 20px);
 }
 
-.playSlideStuff div:first-child label{
-  font-weight: 800;
-}
-
-.playSlideStuff > .playIntDiv{
-  font-size: 16px;
-  padding-left: 3px;
-}
 
 .playIntDiv img{
   display: inline-block;
@@ -78,10 +71,20 @@ header{
   background-color: lightblue;
   border-radius: 100%;
   border: solid black 1px;
+  margin-top: 1px;
 }
 
+.off{
+  color:green;
+}
 
+.unavail{
+ opacity: 35%;
+}
 
+.on{
+  color:red;
+}
 
 .slide {
   display: grid;
@@ -94,26 +97,19 @@ header{
 
 .slide > input {
   align-items: flex-end;
-  height: 20px;
+  height: 15px;
 }
 
 .credit {
   text-align: center;
   font-size: 14px;
-  margin-top: 5px;
-  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
 
 .arrow {
-  height: 100px;
-  margin-top: 250px;
-  position: absolute;
-}
-
-.rightArrow{
-  right:10px;
-}
-
-.leftArrow{
-  left: 10px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 100px;
+  background-color: lightgrey;
 }

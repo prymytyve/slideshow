@@ -5,31 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Slider</title>
   </head>
-
   <body>
-    <header>
-      <h1>Slideshow</h1>
-    </header>
-
-    <div class="imageContainer">
+    <div class="imageBox"></div>         
+    <footer>
+          <div class="panel">
+            <div class="playSlideStuff">
+              <input type="checkbox" id="playCheck" style="display: none;">
+              <label for="playCheck" class="off">Play</label>
+            </div>
+            <div class="playIntDiv hidden">
+              <label for="playInt">Change slides in: <input id="playInt" min="3" max="15" value="5"> seconds</label>
+              <img src="../src/img/check.svg" alt="" class="check">
+            </div>
+          </div>
+      <div class="slidesDiv">
       <img src="../src/img/lArrow.svg" alt="left-arrow" class="arrow leftArrow">
-      <div class="imageBox"></div>
-      <img src="../src/img/rArrow.svg" alt="right-arrow"  class="arrow rightArrow">
-    </div>
-    
-    <div class="slidesDiv">
-      <div class="playSlideStuff">
-        <div>
-          <input type="checkbox" id="playCheck">
-          <label for="playCheck">Play</label>
-        </div class='time'>
-        <div class="playIntDiv hidden">
-          <label for="playInt">Change slides: <input id="playInt" min="3" max="15" value="5"> seconds</label>
-          <img src="../src/img/check.svg" alt="" class="check">
-        </div>
+      <img src="../src/img/rArrow.svg" alt="right-arrow" class="arrow rightArrow">
       </div>
-      </div>
-    </div>
+    </footer>
     <script src="main.js"></script>
   </body>
 </html>

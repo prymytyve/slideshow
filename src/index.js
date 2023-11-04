@@ -12,13 +12,14 @@ const play = document.querySelector("#playCheck");
 const playInt = document.querySelector("#playInt");
 const playIntDiv = document.querySelector(".playIntDiv");
 const check = document.querySelector(".check");
+const playLabel = document.querySelector('label[for="playCheck"]');
 
 showThis;
 
 imgObjArr.forEach((imgObj) => {
   const slide = new Slides(...Object.values(imgObj));
   toDom;
-  slidesDiv.appendChild(slide.toDom());
+  slidesDiv.insertBefore(slide.toDom(), rightArrow);
 });
 
 function bigImgHandler(i) {
@@ -89,13 +90,19 @@ play.addEventListener("click", () => {
     playIntDiv.classList.remove("hidden");
     runInterval = setInterval(autoPlay, playValue());
     play.disabled = true;
+    playLabel.classList.add("unavail");
     setTimeout(function () {
       play.disabled = false;
+      playLabel.classList.remove("unavail");
     }, 3000);
+    playLabel.classList.remove("off");
+    playLabel.classList.add("on");
   }
   function no() {
     playIntDiv.classList.add("hidden");
     clearInterval(runInterval);
+    playLabel.classList.remove("on");
+    playLabel.classList.add("off");
   }
   play.checked === true ? yes() : no();
 });
