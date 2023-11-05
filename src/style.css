@@ -21,10 +21,9 @@ body {
 }
 
 .imageBox{
-  display: block;
-  place-self: center;
   padding-top: 3vh;
-
+  display: flex;
+  width: 100%;
 }
 
 footer{
@@ -120,10 +119,10 @@ label[for="playInt"]>span {
 }
 
 .credit {
-  text-align: center;
   font-size: 14px;
   padding-top: 5px;
   padding-bottom: 10px;
+  text-align: center;
 }
 
 .arrow {
@@ -131,4 +130,13 @@ label[for="playInt"]>span {
   border: 1px solid black;
   border-radius: 100px;
   background-color: lightgrey;
+}
+
+.imageBox > div{
+  width: fit-content;
+  transition: transform 1s ease;
+}
+
+.right{
+  justify-self: right;
 }

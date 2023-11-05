@@ -25,18 +25,19 @@ imgObjArr.forEach((imgObj) => {
   slidesDiv.insertBefore(slide.toDom(), rightArrow);
 });
 
-function bigImgHandler(i) {
+function bigImgHandler(i, v) {
   const thisRadioBtn = document.querySelector(`.navCircle_${i}`);
   thisRadioBtn.checked = true;
   slideArray.forEach((slide) => {
     const slideIndex = slideArray.indexOf(slide);
     slideIndex === i ? (slide.currentImg = true) : (slide.currentImg = false);
   });
-  imageBox.replaceChildren(slideArray[i].showThis());
+  imageBox.replaceChildren();
+  imageBox.appendChild(slideArray[i].showThis(v));
 }
 
 (function firstLoad() {
-  bigImgHandler(0);
+  bigImgHandler(0, "");
 })();
 
 const navCircles = document.querySelectorAll('input[class^="navCircle"]');
@@ -56,14 +57,14 @@ leftArrow.addEventListener("click", () => {
   const i = getCurrentImg();
   if (i <= 0) return;
   let prev = i - 1;
-  bigImgHandler(prev);
+  bigImgHandler(prev, "left");
 });
 
 rightArrow.addEventListener("click", () => {
   const i = getCurrentImg();
   if (i >= slideArray.length - 1) return;
   let next = i + 1;
-  bigImgHandler(next);
+  bigImgHandler(next, "right");
 });
 
 const playValue = () => {
@@ -84,7 +85,7 @@ const autoPlay = () => {
   const i = getCurrentImg();
   let next = i + 1;
   if (i >= slideArray.length - 1) next = 0;
-  bigImgHandler(next);
+  bigImgHandler(next, "right");
 };
 
 play.addEventListener("click", () => {
