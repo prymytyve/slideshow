@@ -3,27 +3,40 @@ import { imgObjArr } from "./imgObjArray.js";
 import { slideArray, Slides } from "./imgSlideClassMod";
 import toDom from "./slideDomstuff";
 import showThis from "./selectedImg";
+import lArrow from "./img/lArrow.svg";
+import rArrow from "./img/rArrow.svg";
+import checkSvg from "./img/check.svg";
 
-const leftArrow = document.querySelector(".leftArrow");
-const rightArrow = document.querySelector(".rightArrow");
 const imageBox = document.querySelector(".imageBox");
 const slidesDiv = document.querySelector(".slidesDiv");
 const play = document.querySelector("#playCheck");
 const playInt = document.querySelector("#playInt");
 const playIntDiv = document.querySelector(".playIntDiv");
-const check = document.querySelector(".check");
 const playLabel = document.querySelector('label[for="playCheck"]');
 const slideInterval = document.querySelector("#interval");
 const slideIntLabel = document.querySelector('[for="interval"]');
 const intervalWrapper = document.querySelector(".intervalWrapper");
-
 showThis;
 
+const leftArrow = new Image();
+leftArrow.src = lArrow;
+leftArrow.classList.add("leftArrow", "arrow");
+const rightArrow = new Image();
+rightArrow.classList.add("rightArrow", "arrow");
+rightArrow.src = rArrow;
+
+slidesDiv.appendChild(leftArrow);
+slidesDiv.appendChild(rightArrow);
 imgObjArr.forEach((imgObj) => {
   const slide = new Slides(...Object.values(imgObj));
   toDom;
   slidesDiv.insertBefore(slide.toDom(), rightArrow);
 });
+
+const check = new Image();
+check.src = checkSvg;
+check.classList.add("check");
+intervalWrapper.appendChild(check);
 
 function bigImgHandler(i, v) {
   const thisRadioBtn = document.querySelector(`.navCircle_${i}`);
