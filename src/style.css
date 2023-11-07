@@ -144,8 +144,8 @@ label[for="playInt"]>span {
 }
 
 .noTransition{
-  left: 50%;
-  right: 50%;
+  left: 0%;
+  right: 0%;
 }
 
 
