@@ -4,6 +4,7 @@ import { Slides } from "./imgSlideClassMod";
 
 export default Slides.prototype.showThis = function (v) {
   const div = document.createElement("div");
+  div.classList.add("imgAndCredits");
   const image = new Image();
   image.src = this.imgSrc;
   div.appendChild(image);
@@ -11,17 +12,17 @@ export default Slides.prototype.showThis = function (v) {
   div.appendChild(this.creditsFormatter());
 
   if (v === "right") {
-    imageBox.style.justifyContent = "right";
+    div.style.left = "50%";
     setTimeout(function transition() {
-      div.style.transform = "translateX(-84%)";
+      div.style.transform = "translateX(-50%)";
     }, 100);
   } else if (v === "left") {
-    imageBox.style.justifyContent = "left";
+    div.style.right = "50%";
     setTimeout(function transition() {
-      div.style.transform = "translateX(84%)";
+      div.style.transform = "translateX(50%)";
     }, 100);
   } else {
-    imageBox.style.justifyContent = "center";
+    div.classList.add("noTransition");
   }
 
   return div;

@@ -1,5 +1,7 @@
 :root{
   scrollbar-gutter: stable both-edges;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .hidden{
@@ -11,7 +13,7 @@ body {
   padding: 0px;
   margin: 0px;
   display: grid;
-  min-height: 100vh;  
+  position: relative; 
 }
 
 #playInt{
@@ -24,6 +26,8 @@ body {
   padding-top: 5vh;
   display: flex;
   width: 100%;
+  position: relative;
+  min-height: 100vh;
 }
 
 footer{
@@ -31,7 +35,7 @@ footer{
   padding: 10px 5px 4px 5px;
   box-sizing: border-box;
   opacity: 100%;
-  position:sticky;
+  position:fixed;
   bottom: 0;  
   display: grid;
   width: fit-content;
@@ -132,11 +136,20 @@ label[for="playInt"]>span {
   background-color: lightgrey;
 }
 
-.imageBox > div{
-  width: fit-content;
-  transition: transform 1s ease;
+.right {
+  justify-self: right;
 }
 
-.right{
-  justify-self: right;
+.noTransition{
+  left: 0%;
+  right: 0%;
+}
+
+
+.imgAndCredits{
+  padding-bottom: 15vh;
+  position: absolute;
+  text-align: center;  
+  width: 100%;
+  transition: all 750ms ease;
 }
