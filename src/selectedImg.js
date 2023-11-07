@@ -1,5 +1,4 @@
 import creditsFormatter from "./creditsFormatterMethod";
-const imageBox = document.querySelector(".imageBox");
 import { Slides } from "./imgSlideClassMod";
 
 export default Slides.prototype.showThis = function (v) {

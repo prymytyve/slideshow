@@ -23,11 +23,13 @@ body {
 }
 
 .imageBox{
-  padding-top: 5vh;
+  /* box-sizing: border-box; */
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   position: relative;
-  min-height: 100vh;
+  /* min-height: 100vh;
+  padding-top: 25px;
+  padding-bottom: 100px; */
 }
 
 footer{
@@ -127,6 +129,7 @@ label[for="playInt"]>span {
   padding-top: 5px;
   padding-bottom: 10px;
   text-align: center;
+  margin-bottom: 100px;
 }
 
 .arrow {
@@ -141,15 +144,16 @@ label[for="playInt"]>span {
 }
 
 .noTransition{
-  left: 0%;
-  right: 0%;
+  left: 50%;
+  right: 50%;
 }
 
 
 .imgAndCredits{
-  padding-bottom: 15vh;
   position: absolute;
   text-align: center;  
   width: 100%;
   transition: all 750ms ease;
+  margin-top: 20px;
+  width:100%;
 }
